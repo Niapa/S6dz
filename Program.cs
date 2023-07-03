@@ -96,8 +96,8 @@ int InputNum(string message)
 
 void Point(int b1, int b2, int k1, int k2)
 {
-    if (k1*b2 - k2*b2  ==0 && b1==b2) Console.Write("Прямые совпадают.");
-    if (k1*b2 - k2*b2  ==0) Console.Write("Прямые параллельны.");
+    if (k1*b2 - k2*b1  ==0 && b1==b2) Console.Write("Прямые совпадают.");
+    else if (k1*b2 - k2*b1  ==0) Console.Write("Прямые параллельны.");
     else 
     {var  x = -(b1-b2)/(k1-k2);
     var  y = k1*x + b1;
