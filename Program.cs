@@ -29,29 +29,22 @@ __________
 1, -7, 567, 89, 223-> 3
 ________________________________________________________________________
 
-
-int Input(string message)
-{
-   Console.WriteLine(message);
-   return int.Parse(Console.ReadLine()!);
-}
-
 int[] InputSomeNums()
 {
-    int[] i nputArray = new int[Input()]
-
+Console.Write("Введите количество чисел m: ");
+int size = int.Parse(Console.ReadLine()!);
+int[] array = new int[size];
+Console.Write("Введите числа через пробел: ");
+int res = 0;
+for (int i = 0; i<array.Length; i++)
+{
+    if (array[i] > 0);
+    res = array[i];
 }
 
 
-
-string PrintArray(int[] array)
-{
-   string res = String.Empty;
-   for (int i = 0; i < array.Length; i++)
-   {
-      res += array[i] + " ";
-   }
-   return res;
+   nums[0]
+   return 
 }
 
 void Count(int[] array)
@@ -69,7 +62,7 @@ InputSomeNums();
 Count(myArray);
 Console.WriteLine(PrintArray(res));
 
-*/
+
 Задача 43:
 __________
 Напишите программу, которая найдёт точку пересечения двух прямых, 
@@ -120,4 +113,74 @@ string res = PrintArray(myArray);
 Console.WriteLine(res);
 int num = Sum(myArray);
 Console.WriteLine($"Сумма элементов на нечетных позициях равна: {num}.");
+*/
+
+
+int[] Nums(string input)
+{
+    int count = 1;
+    for (int i = 0; i < input.Length; i++)
+    {
+        if (input[i] == ',')
+        {
+            count++;
+        }
+    }
+
+    int[] numbers = new int [count];
+    int index = 0;
+
+    for (int i = 0; i < input.Length; i++)
+    {
+        string temp = "";
+
+        while (input [i] != ',')
+        {
+        if(i != input.Length - 1)
+        {
+            temp += input [i].ToString();
+            i++;
+        }
+        else
+        {
+            temp += input [i].ToString();
+            break;
+        }
+        }
+        numbers[index] = Convert.ToInt32(temp);
+        index++;
+    }
+    return numbers;
+}
+
+void PrintArray(int[] array)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length-1; i++)
+    {
+        Console.Write(array[i] + ", ");
+    }
+    Console.Write("");
+    Console.Write("{}]");
+}
+
+int Sum(int[] array)
+{
+    int sum = 0;
+    for (int i = 0; i < array.Length; i++)
+    if(array[i] > 0)
+    {
+        sum ++; 
+    }
+    return sum;
+}
+
+Console.Write("Введите числа через запятую: ");
+int[] numbers = Nums(Console.ReadLine()!);
+PrintArray(numbers);
+int res = Sum(numbers);
+Console.WriteLine();
+Console.WriteLine($"количество значений больше 0 = {res}");
+
+
 
