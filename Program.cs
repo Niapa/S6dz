@@ -90,22 +90,27 @@ b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 int InputNum(string message)
 {
     Console.Write(message);
-    return int.Parse(Console.ReadLine()!);
+    int z = Convert.ToInt32(Console.ReadLine()!);
+    return z;
 }
 
 void Point(int b1, int b2, int k1, int k2)
 {
-    double  x = -(b1-b2)/(k1-k2);
-    double  y = k1*x + b1;
-    if (k1*b2 - k2*b2  ==0) Console.Write("Прямые параллельны");
-    if (k1*b2 - k2*b2  ==0 && b1==b2) Console.Write("Прямые совпадают");
-    else Console.WriteLine($"Координаты точки пересечения прямых: ["+ x + "," + y + "]");
+    if (k1*b2 - k2*b2  ==0 && b1==b2) Console.Write("Прямые совпадают.");
+    if (k1*b2 - k2*b2  ==0) Console.Write("Прямые параллельны.");
+    else 
+    {var  x = -(b1-b2)/(k1-k2);
+    var  y = k1*x + b1;
+    Console.WriteLine($"Координаты точки пересечения прямых: ["+ x + "," + y + "].");
+    }
 }
 
-int d1 = InputNum("Введите b1: ");
-int e1 = InputNum("Введите k1: ");
-int d2 = InputNum("Введите b2: ");
-int e2 = InputNum("Введите k2: ");
+Console.WriteLine($"Поиск точки пересечения двух прямых, заданных уравнениями: ");
+Console.WriteLine("y = k1 * x + b1, y = k2 * x + b2.");
+int d1 = InputNum("Введите k1: ");
+int e1 = InputNum("Введите b1: ");
+int d2 = InputNum("Введите k2: ");
+int e2 = InputNum("Введите b2: ");
 Point(d1, d2, e1, e2);
 
 
@@ -118,8 +123,7 @@ Point(d1, d2, e1, e2);
 
 
 
-double x = (-b2 + b1)/(-k1 + k2);
-double y = k2 * x + b2;
+
 
 
 
