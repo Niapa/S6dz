@@ -156,12 +156,11 @@ int[] Nums(string input)
 void PrintArray(int[] array)
 {
     Console.Write("[ ");
-    for (int i = 0; i < array.Length-1; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i] + ", ");
+        Console.Write(array[i] + " ");
     }
-    Console.Write("");
-    Console.Write("{}]");
+    Console.Write("]");
 }
 
 int Sum(int[] array)
